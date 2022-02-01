@@ -8,14 +8,12 @@ class APIConnector:
         self.server_port = server_port
         self.path = path
 
-        self.response_json = {}
-
-        self.base_path = server_address + ":" + server_port + "/" + (path if path[0] != "/" else path[1:])
+        self.base_path = "http://" + server_address + ":" + server_port + "/" + (path if path[0] != "/" else path[1:])
 
         if self.base_path[-1] != "/":
             self.base_path += "/"
 
-    def make_request(self, *params):
+    def get_data(self, *params):
         param_str = "/".join([str(param) for param in params]) + "/"
 
         try:
@@ -25,10 +23,7 @@ class APIConnector:
         except Exception as error:
             print(f"Other error occurred: {error}")
         else:
-            self.response_json = response.json()
-
-    def get_data(self):
-        return self.response_json
+            return response.json()
 
 def main():
     pass 
