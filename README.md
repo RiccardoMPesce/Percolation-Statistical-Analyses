@@ -1,3 +1,7 @@
 # Percolation Statistical Analyses
 
-Statistical learning analysis of three-dimensional Percolation.
+Statistical analysis of three-dimensional Percolation.
+
+## Usage
+
+Open the [analysis notebook](./analysis.ipynb) and enjoy!
